@@ -9,6 +9,15 @@
         <p>Inicia sesion</p>
         <button (click)="isLogged = true">Login</button>
     }
+
+    <app-games username = "{{username}}"
+    (addFavoriteEvent) = "getFavoriteGame($event)"
+    ></app-games>
+
+    @if(favGame != '') {
+        <p>El juego favorito de {{username}} es {{favGame}}</p>
+    }
+    
 </section>
 
-<app-games></app-games>
+
